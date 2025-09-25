@@ -47,7 +47,7 @@ class StudentFieldMask:
 
 # function: print with bool mask 
 def print_student(student: Student, mask: StudentFieldMask):
-    print("Student Info:")
+    print("\nStudent Info:")
     if mask.include_name:
         print(f"Name: {student.name}")
     if mask.include_age:
@@ -71,7 +71,7 @@ class StudentFieldBitMask(IntFlag):
 
 # function: print with bit mask 
 def print_student_bitmask(student: Student, mask: StudentFieldBitMask):
-    print("Student Info:")
+    print("\nStudent Info:")
     if mask & StudentFieldBitMask.NAME:
         print(f"Name: {student.name}")
     if mask & StudentFieldBitMask.AGE:
