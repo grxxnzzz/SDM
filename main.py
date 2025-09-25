@@ -126,8 +126,15 @@ if __name__ == "__main__":
         print_student_bitmask(student, bit_mask)
 
     # test: combined masks
-    mask1 = StudentFieldBitMask.AGE | StudentFieldBitMask.NAME
-    mask2 = StudentFieldBitMask.FACULTY | StudentFieldBitMask.IS_LEADER
+    #####          NONE = 0   [0]
+    #####           AGE = 1 [00001]
+    #####          NAME = 2 [00010]
+    ##### AVERAGE_GRADE = 4 [00100]
+    #####       FACULTY = 8 [01000]
+    #####    IS_LEADER = 16 [10000]
+
+    mask1 = StudentFieldBitMask.AGE | StudentFieldBitMask.NAME          # 3
+    mask2 = StudentFieldBitMask.FACULTY | StudentFieldBitMask.IS_LEADER # 24
     combined_or = combine_masks_or(mask1, mask2)
     combined_and = combine_masks_and(mask1, mask2)
     combined_not = combine_masks_not(mask1)
